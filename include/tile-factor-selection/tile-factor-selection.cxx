@@ -52,6 +52,8 @@ int getBestTileFactor(const int& V, const int& H, const int& W)
                 {
                     j = J;
                     w = W;
+					/* because the data layout is periodic, the following NUM_VEC will be the same */
+					/* thus simple multiply H / h NUM_VECs */
                     NUM_VEC *= (H / h);
                     h *= (H / h);
                     if (h >= H)
