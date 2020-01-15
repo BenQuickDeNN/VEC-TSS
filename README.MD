@@ -1,6 +1,6 @@
 # VEC-TSS: a Tile Size Selection Tool that Aligns Vectorizable Data for GEMM
 
-## Algorithm 1
+## Algorithm 1: Periodically Iteration
 ### Constant Variable Declaration
 * V: the width of vector processing unit.
 * H: the height of matrix.
@@ -74,4 +74,22 @@ int getBestTileFactor(const int& V, const int& H, const int& W)
     std::printf("MAX_NUM_VEC = %d, ", MAX_NUM_VEC);
     return res;
 }
+```
+## Algorithm 2: Formula Method
+### Constant Variable Declaration
+* V: the width of vector processing unit.
+* H: the height of matrix.
+* W: the width of matrix.
+### Nonconstant Variable Declaration
+* T: the number of rows in a period.
+### Code
+T:
+```C++
+if (W % V == 0)
+    T = 1;
+else
+    if (V % (W % V) == 0)
+        T = V / (W % V);
+    else
+        T = V;
 ```
