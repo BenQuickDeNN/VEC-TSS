@@ -69,6 +69,7 @@ int getBestTileFactor(const int& V, const int& H, const int& W)
                     j = J;
             }
         }
+        std::printf("J = %d, NUM_VEC = %d\r\n", J, NUM_VEC);
         if (NUM_VEC > MAX_NUM_VEC)
         {
             MAX_NUM_VEC = NUM_VEC;
