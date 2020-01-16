@@ -75,7 +75,7 @@ int getBestTileFactor(const int& V, const int& H, const int& W)
     return res;
 }
 ```
-## Algorithm 2: Formula Method
+## Algorithm 2: Formula Method (to Be Compeleted)
 ### Constant Variable Declaration
 * V: the width of vector processing unit.
 * H: the height of matrix.
