@@ -79,25 +79,3 @@ int getBestTileFactor(const int& V, const int& H, const int& W)
     std::printf("MAX_NUM_VEC = %d, ", MAX_NUM_VEC);
     return res;
 }
-
-int fastGetBestTileFactor(const int& V, const int& H, const int& W)
-{
-    /* tile factor */
-    int res = -1;
-
-    /* number of vectorizable data units */
-    int MAX_NUM_VEC = 0;
-    int NUM_VEC = 0;
-
-    /* compute data layout period */
-    int T;
-    if (W % V == 0)
-        T = 1;
-    else
-        if (V % (W % V) == 0)
-            T = V / (W % V);
-        else
-            T = V;
-
-    return res;
-}
